@@ -2,7 +2,7 @@ services:
   - type: web
     name: asnodt-storage
     env: node
-    buildCommand: npm install
+    buildCommand: npm install && npm run build
     startCommand: npm start
     envVars:
       - key: MONGODB_URI
