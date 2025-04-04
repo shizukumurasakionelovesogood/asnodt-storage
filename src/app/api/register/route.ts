@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
-import { connectToDatabase } from '@/lib/mongodb';
+import bcrypt from 'bcryptjs';
+import connectDB from '@/lib/mongodb';
 import User from '@/models/User';
 import VerificationCode from '@/models/VerificationCode';
-import bcrypt from 'bcryptjs';
 
 export async function POST(request: Request) {
   try {
@@ -15,7 +15,7 @@ export async function POST(request: Request) {
       );
     }
 
-    await connectToDatabase();
+    await connectDB();
 
     // Проверяем, существует ли пользователь
     const existingUser = await User.findOne({ email });

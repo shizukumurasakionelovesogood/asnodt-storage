@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
-import { connectToDatabase } from '@/lib/mongodb';
-import User from '@/models/User';
 import bcrypt from 'bcryptjs';
+import connectDB from '@/lib/mongodb';
+import User from '@/models/User';
 import jwt from 'jsonwebtoken';
 
 export async function POST(request: Request) {
@@ -15,7 +15,7 @@ export async function POST(request: Request) {
       );
     }
 
-    await connectToDatabase();
+    await connectDB();
 
     // Ищем пользователя
     const user = await User.findOne({ email });
