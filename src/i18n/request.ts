@@ -1,9 +1,7 @@
-import { getRequestConfig, requestLocale } from 'next-intl/server';
+import { getRequestConfig } from 'next-intl/server';
 import { ReactNode } from 'react';
 
-export default getRequestConfig(async () => {
-  const locale = await requestLocale();
-  
+export default getRequestConfig(async ({ locale }) => {
   return {
     messages: (await import(`@/messages/${locale}.json`)).default,
     timeZone: 'Europe/Moscow',
