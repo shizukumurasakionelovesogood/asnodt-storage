@@ -1,10 +1,12 @@
 import mongoose from 'mongoose';
 
+interface MongooseCache {
+  conn: typeof mongoose | null;
+  promise: Promise<typeof mongoose> | null;
+}
+
 declare global {
-  var mongoose: {
-    conn: typeof mongoose | null;
-    promise: Promise<typeof mongoose> | null;
-  } | undefined;
+  var mongoose: MongooseCache | undefined;
 }
 
 if (!process.env.MONGODB_URI) {
@@ -13,17 +15,13 @@ if (!process.env.MONGODB_URI) {
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
-let cached = global.mongoose;
+let cached: MongooseCache = global.mongoose || { conn: null, promise: null };
 
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
+if (!global.mongoose) {
+  global.mongoose = cached;
 }
 
-async function connectDB() {
-  if (!cached) {
-    throw new Error('MongoDB connection not initialized');
-  }
-
+async function connectDB(): Promise<typeof mongoose> {
   if (cached.conn) {
     return cached.conn;
   }
@@ -37,8 +35,7 @@ async function connectDB() {
   }
 
   try {
-    const mongooseInstance = await cached.promise;
-    cached.conn = mongooseInstance;
+    cached.conn = await cached.promise;
   } catch (e) {
     cached.promise = null;
     throw e;
