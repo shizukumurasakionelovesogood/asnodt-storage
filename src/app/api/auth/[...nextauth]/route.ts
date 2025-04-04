@@ -3,8 +3,9 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import bcrypt from 'bcryptjs';
 import connectDB from '@/lib/mongodb';
 import User from '@/models/User';
+import { JWT } from 'next-auth/jwt';
 
-interface Token {
+interface Token extends JWT {
   id: string;
 }
 
@@ -57,7 +58,7 @@ const handler = NextAuth({
     },
     async session({ session, token }) {
       if (session.user) {
-        session.user.id = (token as Token).id;
+        session.user.id = (token as unknown as Token).id;
       }
       return session;
     },
