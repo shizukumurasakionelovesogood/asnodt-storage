@@ -20,6 +20,10 @@ if (!cached) {
 }
 
 async function connectDB() {
+  if (!cached) {
+    throw new Error('MongoDB connection not initialized');
+  }
+
   if (cached.conn) {
     return cached.conn;
   }
