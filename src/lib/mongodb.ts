@@ -33,8 +33,9 @@ async function connectDB() {
       bufferCommands: false,
     };
 
-    const promise = mongoose.connect(MONGODB_URI, opts);
-    cached.promise = promise;
+    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
+      return mongoose;
+    });
   }
 
   try {
