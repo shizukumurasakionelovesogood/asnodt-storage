@@ -1,0 +1,34 @@
+{
+  "common": {
+    "language": "Language",
+    "languages": {
+      "en": "English",
+      "ru": "Russian",
+      "uk": "Ukrainian",
+      "cs": "Czech"
+    }
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "name": "Name",
+    "verificationCode": "Verification Code",
+    "resendCode": "Resend Code",
+    "verifyEmail": "Verify Email",
+    "emailSent": "We've sent a verification code to {email}",
+    "alreadyHaveAccount": "Already have an account?",
+    "dontHaveAccount": "Don't have an account?",
+    "loginLink": "Login",
+    "registerLink": "Register"
+  },
+  "storage": {
+    "title": "My Storage",
+    "upload": "Upload File",
+    "files": "Files",
+    "folders": "Folders",
+    "empty": "No files or folders yet"
+  }
+} 

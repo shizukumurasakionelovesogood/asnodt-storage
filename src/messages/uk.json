@@ -1,0 +1,34 @@
+{
+  "common": {
+    "language": "Мова",
+    "languages": {
+      "en": "Англійська",
+      "ru": "Російська",
+      "uk": "Українська",
+      "cs": "Чеська"
+    }
+  },
+  "auth": {
+    "login": "Вхід",
+    "register": "Реєстрація",
+    "email": "Email",
+    "password": "Пароль",
+    "confirmPassword": "Підтвердіть пароль",
+    "name": "Ім'я",
+    "verificationCode": "Код підтвердження",
+    "resendCode": "Відправити код повторно",
+    "verifyEmail": "Підтвердження email",
+    "emailSent": "Ми відправили код підтвердження на {email}",
+    "alreadyHaveAccount": "Вже є обліковий запис?",
+    "dontHaveAccount": "Немає облікового запису?",
+    "loginLink": "Увійти",
+    "registerLink": "Зареєструватися"
+  },
+  "storage": {
+    "title": "Моє сховище",
+    "upload": "Завантажити файл",
+    "files": "Файли",
+    "folders": "Папки",
+    "empty": "Поки немає файлів або папок"
+  }
+} 

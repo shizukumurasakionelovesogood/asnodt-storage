@@ -1,0 +1,34 @@
+{
+  "common": {
+    "language": "Язык",
+    "languages": {
+      "en": "Английский",
+      "ru": "Русский",
+      "uk": "Украинский",
+      "cs": "Чешский"
+    }
+  },
+  "auth": {
+    "login": "Вход",
+    "register": "Регистрация",
+    "email": "Email",
+    "password": "Пароль",
+    "confirmPassword": "Подтвердите пароль",
+    "name": "Имя",
+    "verificationCode": "Код подтверждения",
+    "resendCode": "Отправить код повторно",
+    "verifyEmail": "Подтверждение email",
+    "emailSent": "Мы отправили код подтверждения на {email}",
+    "alreadyHaveAccount": "Уже есть аккаунт?",
+    "dontHaveAccount": "Нет аккаунта?",
+    "loginLink": "Войти",
+    "registerLink": "Зарегистрироваться"
+  },
+  "storage": {
+    "title": "Мое хранилище",
+    "upload": "Загрузить файл",
+    "files": "Файлы",
+    "folders": "Папки",
+    "empty": "Пока нет файлов или папок"
+  }
+} 

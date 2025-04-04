@@ -1,0 +1,34 @@
+{
+  "common": {
+    "language": "Jazyk",
+    "languages": {
+      "en": "Angličtina",
+      "ru": "Ruština",
+      "uk": "Ukrajinština",
+      "cs": "Čeština"
+    }
+  },
+  "auth": {
+    "login": "Přihlášení",
+    "register": "Registrace",
+    "email": "Email",
+    "password": "Heslo",
+    "confirmPassword": "Potvrďte heslo",
+    "name": "Jméno",
+    "verificationCode": "Ověřovací kód",
+    "resendCode": "Znovu odeslat kód",
+    "verifyEmail": "Ověření emailu",
+    "emailSent": "Odeslali jsme ověřovací kód na {email}",
+    "alreadyHaveAccount": "Již máte účet?",
+    "dontHaveAccount": "Nemáte účet?",
+    "loginLink": "Přihlásit se",
+    "registerLink": "Registrovat se"
+  },
+  "storage": {
+    "title": "Moje úložiště",
+    "upload": "Nahrát soubor",
+    "files": "Soubory",
+    "folders": "Složky",
+    "empty": "Zatím žádné soubory nebo složky"
+  }
+} 
