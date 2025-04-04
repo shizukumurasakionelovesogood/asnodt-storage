@@ -4,6 +4,10 @@ import bcrypt from 'bcryptjs';
 import connectDB from '@/lib/mongodb';
 import User from '@/models/User';
 
+interface Token {
+  id: string;
+}
+
 const handler = NextAuth({
   providers: [
     CredentialsProvider({
@@ -53,7 +57,7 @@ const handler = NextAuth({
     },
     async session({ session, token }) {
       if (session.user) {
-        session.user.id = token.id;
+        session.user.id = (token as Token).id;
       }
       return session;
     },
