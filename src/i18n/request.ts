@@ -1,9 +1,8 @@
-import { getRequestConfig } from 'next-intl/server';
-import { setRequestLocale } from 'next-intl/server';
+import { getRequestConfig, requestLocale } from 'next-intl/server';
 import { ReactNode } from 'react';
 
-export default getRequestConfig(async ({ locale }) => {
-  setRequestLocale(locale);
+export default getRequestConfig(async () => {
+  const locale = await requestLocale();
   
   return {
     messages: (await import(`@/messages/${locale}.json`)).default,
