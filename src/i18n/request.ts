@@ -1,5 +1,6 @@
 import { getRequestConfig } from 'next-intl/server';
 import { setRequestLocale } from 'next-intl/server';
+import { ReactNode } from 'react';
 
 export default getRequestConfig(async ({ locale }) => {
   setRequestLocale(locale);
@@ -9,7 +10,7 @@ export default getRequestConfig(async ({ locale }) => {
     timeZone: 'Europe/Moscow',
     now: new Date(),
     defaultTranslationValues: {
-      strong: (chunks: string) => `<strong>${chunks}</strong>`
+      strong: (chunks: ReactNode) => chunks
     }
   };
 }); 
