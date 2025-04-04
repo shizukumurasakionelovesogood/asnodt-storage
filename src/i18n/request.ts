@@ -9,7 +9,7 @@ export default getRequestConfig(async ({ locale }) => {
     timeZone: 'Europe/Moscow',
     now: new Date(),
     defaultTranslationValues: {
-      strong: (chunks) => <strong>{chunks}</strong>
+      strong: (chunks: string) => `<strong>${chunks}</strong>`
     }
   };
 }); 
