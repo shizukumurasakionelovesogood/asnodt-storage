@@ -33,7 +33,8 @@ async function connectDB() {
       bufferCommands: false,
     };
 
-    cached.promise = mongoose.connect(MONGODB_URI, opts);
+    const promise = mongoose.connect(MONGODB_URI, opts);
+    cached.promise = promise;
   }
 
   try {
